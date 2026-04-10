@@ -14,19 +14,20 @@ API utilizada
 Campo	        Detalle
 
 Nombre	        TheSportsDB
-URL base	    https://www.thesportsdb.com/api/v1/json/3
+URL base	    https://www.thesportsdb.com/api/
 Documentación	https://www.thesportsdb.com/api.php
-Autenticación requerida	No
+Autenticación requerida	Si (el 123 de la url es la test api key)
 Formato de respuesta	JSON
 
 
 Endpoints que voy a usar
 
 Endpoint	Descripción	Ejemplo de llamada
-/searchteams.php?t={nombre}	Busca un equipo por nombre	https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=Barcelona
+/searchteams.php?t={nombre}	Busca un equipo por nombre	https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Barcelona
 
 
 Funcionalidades principales
+
 Buscar un equipo por nombre.
 
 Mostrar información básica del equipo:
@@ -43,9 +44,11 @@ URL del escudo
 
 
 Clases previstas
+
 Clase	        Responsabilidad
+
 Equipo	        Representa los datos del equipo obtenidos de la API.
-ApiClient	    Realiza la llamada HTTP y devuelve el JSON.
+ApiClient	    Realiza la llamada y devuelve el JSON.
 EquipoService	Procesa el JSON y crea objetos Equipo.
 App	            Clase principal que pide el nombre del equipo y muestra los datos.
 
@@ -53,7 +56,7 @@ App	            Clase principal que pide el nombre del equipo y muestra los dato
 Diagrama de clases UML 
 
 
-Ejemplo de respuesta JSON de la API
+Ejemplo de respuesta JSON de la API, devuelve mas campos pero usaremos estos
 json
 {
   "teams": [
