@@ -11,3 +11,7 @@ Mostrar la URL del escudo.
 
 API utilizada
 TheSportsDB — https://www.thesportsdb.com/api.php
+
+## Diagrama de Clases
+
+![Diagrama del Proyecto](diagramaProyecto.png)
