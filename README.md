@@ -1,4 +1,4 @@
-MiniFutbolInfo
+
 MiniFutbolInfo es una aplicación sencilla en Java que permite buscar un equipo de fútbol y mostrar información básica como país, estadio, año de fundación y el escudo del club.
 
 Funcionalidades
