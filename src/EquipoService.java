@@ -17,15 +17,36 @@ public class EquipoService {
         String estadio = extraer(json, "strStadium");
         String fundacion = extraer(json, "intFormedYear");
         String escudo = extraer(json, "strTeamBadge");
+        String liga = extraer(json, "strLeague");
+        String descripcion = extraer(json, "strDescriptionEN");
+        String capacidad = extraer(json, "intStadiumCapacity");
+        String estadioImg = extraer(json, "strStadiumThumb");
+        String facebook = extraer(json, "strFacebook");
+        String twitter = extraer(json, "strTwitter");
+        String instagram = extraer(json, "strInstagram");
 
-        return new Equipo(nombreEquipo, pais, estadio, fundacion, escudo);
+        return new Equipo(
+                nombreEquipo, pais, estadio, fundacion, escudo,
+                liga, descripcion, capacidad, estadioImg,
+                facebook, twitter, instagram
+        );
     }
 
     private String extraer(String json, String campo) {
         try {
-            int inicio = json.indexOf(campo) + campo.length() + 3;
+            int inicio = json.indexOf(campo);
+            if (inicio == -1) return "No disponible";
+
+            inicio = inicio + campo.length() + 3;
             int fin = json.indexOf("\"", inicio);
-            return json.substring(inicio, fin);
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = inicio; i < fin; i++) {
+                sb.append(json.charAt(i));
+            }
+
+            return sb.toString();
+
         } catch (Exception e) {
             return "No disponible";
         }
